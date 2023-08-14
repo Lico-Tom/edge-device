@@ -1,0 +1,36 @@
+##############################################################################
+#                                                                            #
+#           https://www.home-assistant.io/docs/configuration/                #
+##############################################################################
+homeassistant:
+mqtt:
+  broker: 192.168.31.248  # 添加MQTT服务器的IP地址
+  port: 1883        # 添加MQTT服务器的端口号
+  username: admin   # 添加MQTT服务器的用户名
+  password: 123456  # 添加MQTT服务器的用户密码
+  discovery: true   # 配置自动发现
+  switch:
+    - unique_id: led_1          #设备ID
+      name: "led_1"             #设备名称
+      state_topic: "TOESP01S"   #订阅端口
+      command_topic: "TOESP01S" #同上
+      payload_on: "1"           #开灯的指令
+      payload_off: "2"          #关灯的指令
+  light:
+    - unique_id: light01
+      name: "light01"
+      state_topic: "light_001"
+      command_topic: "light_001"
+      payload_on: "on"
+      payload_off: "off"
+  sensor:
+    - unique_id: humidifier01
+      name: "RSSI"
+      state_topic: "/sensor/humidifier01"
+      unit_of_measurement: "dBm"
+      value_template: "{{value_json.RSSI}}"
+      availability:
+        - topic: "/sensor/status"
+      payload_available: "online"
+      payload_not_available: "offline"
+      json_attributes_topic: "/sensor/attributes"

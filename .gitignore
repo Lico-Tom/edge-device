@@ -1,0 +1,23 @@
+# file system
+.DS_Store
+
+# ide
+**/.idea
+
+# Project exclude paths
+**.log
+**/target
+**/.classpath
+**/.project
+**/.factorypath
+**/**.iml
+
+# gradle
+.gradle/**
+**/build/**
+
+# mvn shade plugin
+dependency-reduced-pom.xml
+
+# log file
+logs/

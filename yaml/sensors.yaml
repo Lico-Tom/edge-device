@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Room Humidity"
+  state_topic: "root/humidity"
+- platform: mqtt
+  name: "Door Motion"
+  state_topic: "door/motion"

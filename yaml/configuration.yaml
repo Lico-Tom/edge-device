@@ -1,0 +1,35 @@
+##############################################################################
+#                        hass-confif                                         #
+#           https://github.com/matt8707/hass-config                          #
+#           https://www.home-assistant.io/docs/configuration/                #
+##############################################################################
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+##############################################################################
+#                    pushbullet message platform                             #
+#         https://www.home-assistant.io/integrations/pushbullet              #
+##############################################################################
+notify:
+  platform: pushbullet
+  api_key: ""
+  name: pushbullet
+
+# Example configuration.yaml entry
+#################################################################################
+#                      configuration                                            #
+#https://www.home-assistant.io/integrations/mobile_app/#mobile-app-documentation#
+#################################################################################
+mobile_app:
+
+################################################################
+
+################################################################
+

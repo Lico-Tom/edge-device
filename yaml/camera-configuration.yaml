@@ -1,0 +1,9 @@
+###############################################################
+#                           camera                            #
+#           https://zhuanlan.zhihu.com/p/584683887            #
+###############################################################
+camera:
+  - platform: ffmpeg
+    name: home
+    input: http://192.168.31.228:8080
+    extra_arguments: -c:v copy -c:a copy -f segment -segment_time 1800 -segment_format mp4 -reset_timestamps 1 -strftime 1 -fs 25M
